@@ -23,7 +23,7 @@ public class Class2 {
         String myStatment = "I am a good programmer";
         int myStatmentLen = myStatment.length();
 
-        String last10String = myStatment.substring(myStatmentLen-10);
+        String last10String = myStatment.substring(myStatmentLen - 10);
         System.out.println("Last word: " + last10String);
 
         // or
@@ -50,8 +50,8 @@ public class Class2 {
         System.out.println("Index of r is: " + indexofr);
 
         int lenghtOfFirstName = indexofr + 1;
-        System.out.println("Lenght of my name is: " + lenghtOfFirstName );
-        
+        System.out.println("Lenght of my name is: " + lenghtOfFirstName);
 
     }
+
 }
