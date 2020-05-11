@@ -17,9 +17,10 @@ public class HomeTest {
         } else if (fullNameWords.length == 1) {
             System.out.println("First name: " + fullNameWords[0]);
 
-        } else {
-            System.out.println("Invalid full name enterd: " + fullname);
         }
+
+
+
     }
 }
 
