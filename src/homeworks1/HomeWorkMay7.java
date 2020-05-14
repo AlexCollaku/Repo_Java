@@ -37,5 +37,63 @@ public class HomeWorkMay7 {
             System.out.println(names[i]);
         }
 
-    }
+        // print the values from names-array if
+        // 1. name-length is greater than or equal to 5
+        // and 2. name-value contains 'p' (do not consider cases)
+
+        for (int i = 0; i < names.length; i++) {
+            if (names.length >=5 && names[i].toLowerCase().contains("p")) {
+                System.out.println("Value of name: " + names[i]);
+            }
+        }
+        System.out.println("Using simple for-loop");
+        for (String name : names) {
+            if (name.length() >= 5 && name.toLowerCase().contains("p")) {
+                System.out.println(name);
+            }
+        }
+
+        String[] months = {"Janaury", "February", "March", "April", "May", "June", "July", "Sptember", "October", "November", "December"};
+        /**
+         * use below data
+         * Dec, Jan, Feb: Winter
+         * Mar, Apr, May: Spring
+         * Jun, Jul, Aug: Summer
+         * Sep, Oct, Nov: Fall
+         *
+         * print like
+         * Month: Janaury -> Season: Winter
+         * Month: February -> Season: Winter
+         */
+        for (String month : months) {
+            String season = "";
+            switch (month.toLowerCase()) {
+                case "janaury":
+                case "february":
+                case "december":
+                    season = "winter";
+                    break;
+                case "march":
+                case "april":
+                case "may":
+                    season = "spring";
+                    break;
+                case "june":
+                case "july":
+                case "august":
+                    season = "summer";
+                    break;
+                case "september":
+                case "october":
+                case "november":
+                    season = "fall";
+                    break;
+                default:
+                    System.out.println("Invalid month name -> " + month);
+            }
+            System.out.println("Month: " + month + " -> Season: " + season);
+            }
+
+        }
 }
+

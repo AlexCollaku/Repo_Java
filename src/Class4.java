@@ -17,11 +17,13 @@ public class Class4 {
          */
 
         String msg = "have a great day to you";
-        String[] abr = msg.split(" ");
+        String abr = "";
+        String[] msgWords = msg.split(" ");
 
-        for (int i= 0 ; i < abr.length ; i++) {
-            System.out.println("Abbreviation: " + abr[i].toUpperCase().charAt(0));
+        for (String word : msgWords) {
+            abr = abr + word.toUpperCase().charAt(0);
         }
+        System.out.println("Abbreviation : " + abr);
 
 
 
@@ -43,16 +45,30 @@ public class Class4 {
          */
         String message = "happy holidays"; // syadiloh yppah
         String[] reverseMessage = message.split("");
+        String reverseMsg = "";
         System.out.println("Message " + message);
 
         for (int j = reverseMessage.length-1; j >= 0 ; j--) {
-            System.out.println("Reverse message: " + reverseMessage[j].toLowerCase());
+            reverseMsg = reverseMsg + reverseMessage[j].toLowerCase();
         }
+        System.out.println("Reverse message: " + reverseMsg.toLowerCase());
 
 
         /**
          *  Check if the word is palindrome
+         *  word
+         *  reverseWord = reverse the value in word-variable
+         *  word.equalsIgnoreCase(reverseWord)
+         *
+         *  level->leveL
+         *  leve
+         *
+         *  Another Method
+         *  pick letter from index0 (i) compare with letter at last index (length-1) -> length-1-i
+         *  pick letter from index1 (i) compare with letter at index -> length-2 -> length-1-i
+         *
          */
+
 
 
         String word = "level";
@@ -62,6 +78,14 @@ public class Class4 {
             if (result) {
                 System.out.println("Is " + reverseWord[i] + " a palindrome " + result);
             }
+       }
+        int len = word.length();
+        for (int i = 0; i < word.length(); i++) {
+            if (word.charAt(i) == word.charAt(len-1-i)) {
+                result=true;
+                break;
+            }
+            System.out.println("Is " + word + " a palindrome " + result);
         }
 
     }
