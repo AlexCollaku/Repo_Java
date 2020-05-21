@@ -52,28 +52,27 @@ public class Class3 {
 
         switch (carMode) {
             case 'D':
-                switch (driveType) {
-                    case "Sport":
-                        System.out.println("You are on Sport mode");
-                        break;
-                    case "Snow":
-                        System.out.println("You are on Snow mode");
-                        break;
-                    case "Eco":
-                        System.out.println("You are on Eco mode");
-
-                } break;
+                 switch (driveType) {
+            case "Sport":
+                 System.out.println("You are on Sport mode");
+                 break;
+            case "Snow":
+                 System.out.println("You are on Snow mode");
+                 break;
+            case "Eco":
+                 System.out.println("You are on Eco mode");
+             }   break;
 
             case 'P':
-                System.out.println("You can park the car");
-                break;
+                 System.out.println("You can park the car");
+                 break;
             case 'N':
-                System.out.println("Put the car in car wash");
-                break;
+                 System.out.println("Put the car in car wash");
+                 break;
             case 'R':
-                System.out.println("Reverse the car");
-            break;
-            default:
+                 System.out.println("Reverse the car");
+                 break;
+                 default:
 
         }
 

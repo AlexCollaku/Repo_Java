@@ -15,8 +15,14 @@ public class HomeWorkMay7 {
         // take the value from names-array , and the print the name if name-length is 5 or more;
         // and print like ; Happy -> the first letter in upper case and the rest in lower case
         for (int i = 0 ; i < names.length ; i++) {
-            if (names[i].length() >= 5)
-            System.out.println(names[i].substring(0,1).toUpperCase() + names[i].substring(1).toLowerCase());
+            if (names[i].length() >= 5) {
+                System.out.println(names[i].substring(0, 1).toUpperCase() + names[i].substring(1).toLowerCase());
+            }
+        }
+        for(int f = 0; f < names.length; f++) {
+            if(names[f].length() >= 5) {
+                System.out.println(names[f].substring(0,1).toUpperCase() + names[f].substring(1).toLowerCase());
+            }
         }
 
         // take value from names-array , and print only the odd index value (1, 3 , 5 ....)
@@ -42,7 +48,7 @@ public class HomeWorkMay7 {
         // and 2. name-value contains 'p' (do not consider cases)
 
         for (int i = 0; i < names.length; i++) {
-            if (names.length >=5 && names[i].toLowerCase().contains("p")) {
+            if (names[i].length() >=5 && names[i].toLowerCase().contains("p")) {
                 System.out.println("Value of name: " + names[i]);
             }
         }

@@ -23,37 +23,50 @@ public class Class5 {
      * Maximun value in the given array: 189
      */
 
-    /**
-     * Create a method that will tell the name of student with maximum marks/score
-     * int[] scores = {90, 89, 98, 100, 92};
-     * String[] names = {"Happy", "Peace", "Jesse", "Kaitlin", "Lucky"};
-     * Kaitlin scored the maximum score(100)
-     */
+
 
     public static void main(String[] args) {
 
-        namePosition();
+        String[] names = {"john", "michael", "dora", "philip", "ilena", "palena"};
+        String nameToSearch = "palena";
+        System.out.println(findPosition(names,nameToSearch));
+
+
+
 
         int[] numbers = {11, 22, 33, 44};
         double averageNumbers = average(numbers);
         System.out.println("Average of given array is: " + averageNumbers);
 
+        int[] num = {45, 22, 11, 65, 189, 100, 91, 82};
+        System.out.println(getMax(num));
+
+        int[] scores = {90, 89, 98, 100, 92};
+        String[] students = {"Happy", "Peace", "Jesse", "Kaitlin", "Lucky"};
+        System.out.println(findTopper(scores, students));
+
+
+
+
     }
 
-    public static int namePosition() {
-        String[] names = {"john", "michael", "dora", "philip", "ilena", "palena"};
-        String nameToSearch = "palena";
+    public static String findPosition(String[] names, String nameToSearch) {
+
         int position = 0;
+        String positionString = "";
 
         for (int i = 0; i < names.length; i++) {
-            boolean contains = names[i].equalsIgnoreCase(nameToSearch);
-            if (contains) {
-                System.out.println(names[i] + " is on position: " + (i + 1));
-            } else {
-                System.out.println(nameToSearch + " is not present on the array");
+            if (names[i].equalsIgnoreCase(nameToSearch)); {
+                position = i + 1;
+                break;
             }
+        }  if (position > 0) {
+            System.out.println(nameToSearch + " is on position- " + position);
+        } else {
+            System.out.println(nameToSearch + " is not present in the array");
         }
-        return position;
+        return positionString;
+
     }
 
     public static double average(int[] array) {
@@ -67,15 +80,56 @@ public class Class5 {
     // Create a method to find maximun value in the given int-array
     // Maximun value in the given array: 189
 
-    public static int maximumValue() {
-        int[] numbers = {45, 22, 11, 65, 189, 100, 91, 82};
+    public static int getMax(int[] numbers) {
 
-        for( int number : numbers) {
-            
+        int max = numbers[0];
+
+        for (int i = 1; i < numbers.length; i++) {
+           if (max < numbers[i]) {
+               max = numbers[i];
+            }
+        }
+        return max;
+
+    }
+    /**
+     * Create a method that will tell the name of student with maximum marks/score
+     * int[] scores = {90, 89, 98, 100, 92};
+     * String[] names = {"Happy", "Peace", "Jesse", "Kaitlin", "Lucky"};
+     * Kaitlin scored the maximum score(100)
+     */
+    public static String findTopper(int[] scores, String[] names) {
+
+            int max = scores[0];
+            int scoreIndex = 0;
+            String topperResult = "";
+            for (int i = 1; i < scores.length; i++) {
+                if (max < scores[i]) {
+                    max = scores[i];
+                    scoreIndex = i;
+                }
+            }
+            topperResult = names[scoreIndex] + " scored the maximum score (" + max + ")";
+            return topperResult;
 
         }
+        public static String findTopper(int[] scores, String names) {
+        int max = 0;
+        int scoreIndex = 0;
+        String topperResult = "";
+        for(int i = 0; i < scores.length; i++) {
+            if(max < scores[i]) {
+                max = scores[i];
+                scoreIndex = i;
+            }
+        }
+        return topperResult;
+        }
     }
-}
+
+
+
+
 
 
 
