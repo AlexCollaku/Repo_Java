@@ -2,64 +2,90 @@ package printerclass;
 
 public class Printer {
 
-    int maxTonerLevel = 100;
-    int maxPagesTray = 100;
-    int numberOfPages;
-    int numOfToner;
-    int pageToPrint;
+    int toner = 100;
+    int pages = 100;
+    int pageRequired;
+    int tonerRequired;
 
 
-    public int addToner(int num) {
+    public int addToner(int tonerToAdd) {
 
-        for(int i = 0; i <= 100; i++) {
-            if(num > 0 && num <= 100) {
-                numOfToner = num;
+            if(tonerToAdd > 0 && tonerToAdd <= 100) {
+                if (tonerToAdd + toner <= 100) {
+                    toner = toner + tonerToAdd;
+            } else {
+                    System.out.println("More toner added than printer capacity"); }
+            } else {
+                System.out.println("Invalid toner to add");
             }
-        } return numOfToner;
+            return toner;
 
 
     }
-    public int addPages(int number) {
+    public int addPages(int pageToAdd) {
 
-        for(int i = 0; i <= 100; i++) {
-            if (number > 0 && number <= 100) {
-                numberOfPages = number;
+            if (pageToAdd > 0 && pageToAdd <= 100) {
+                if (pageToAdd + pages <= 100) {
+                    pages = pages + pageToAdd;
+            } else {
+                    System.out.println("More pages added than printer capacity"); }
+            } else {
+                System.out.println("Invalid pages to add");
             }
-        } return numberOfPages;
+            return pages;
 
     }
 
-    public int printPages(int num) {
+    public int printPages(int pageToPrint) {
+        boolean numbPages = true; //(double) , false (single)
 
-        for(int i = 0; i <= 100; i++)  {
-            if (num > 0 && num <= 100) {
-              pageToPrint = num;
+        if (numbPages) {
+            if(pageToPrint%2 == 0) {
+                pageRequired = pageToPrint/2;
+                tonerRequired = pageToPrint;
+
+                pages = pages - pageRequired;
+                toner = toner - tonerRequired;
+
+            } else {
+                pageRequired = pageToPrint/2 +1;
+                tonerRequired = pageToPrint;
+
+                pages = pages - pageRequired;
+                toner = toner - tonerRequired;
             }
-        } return pageToPrint;
+        } else {
+            pageRequired = pageToPrint;
+            tonerRequired = pageToPrint;
 
+            pages = pages - pageRequired;
+            toner = toner - tonerRequired;
+
+            System.out.println("Printed " + pageToPrint + " number of pages, single sided");
+
+        }return pageToPrint;
 
     }
+
     public void printerSummary() {
-        int tonerLevel = 0;
-        int pagesCount = 0;
-        for (int i = 0; i <= 100; i++) {
-            if () {
+        //toner level
+        // pages count in tray
 
 
-            }
 
         }
-    }
+
     public String checkToner() {
+        String tonerLevel = "";
 
-        String addToner = "";
-        for(int i = 0; i <= 100; i--) {
-            if( i < 10) {
-                addToner = "Add toner";
-            }
-        } return addToner;
+            if( toner < 10) {
+             tonerLevel = "Add toner";
+
+            } return tonerLevel;
+        }
 
     }
-}
+
+
 
 
