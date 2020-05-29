@@ -11,6 +11,10 @@ public class HomeWorkMay7 {
         for (int i = 0; i < names.length; i++) {
             System.out.println("Name: " + names[i]);
         }
+        String[] names1 = {"Milan", "Bisha", "Megamillion"};
+        for(int i = 0; i < names1.length; i++) {
+            System.out.println("Names: " + names1);
+        }
 
         // take the value from names-array , and the print the name if name-length is 5 or more;
         // and print like ; Happy -> the first letter in upper case and the rest in lower case
@@ -99,6 +103,7 @@ public class HomeWorkMay7 {
             }
             System.out.println("Month: " + month + " -> Season: " + season);
             }
+
 
         }
 }

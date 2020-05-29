@@ -54,7 +54,7 @@ public class Class3 {
 
         switch (carMode) {
             case 'D':
-                 switch (driveType) {
+              switch (driveType) {
             case "Sport":
                  System.out.println("You are on Sport mode");
                  break;
@@ -100,8 +100,6 @@ public class Class3 {
             System.out.println("Print the number: " + num);
         }
 
-
-        for (int i = 0 ; i<=10 ; i--);
     }
 
 

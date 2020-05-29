@@ -50,6 +50,7 @@ public class Methods {
         return total;
     }
     /**
+     *
      * create a method to reverse a string
      */
     public static String reverseString(String message) {
