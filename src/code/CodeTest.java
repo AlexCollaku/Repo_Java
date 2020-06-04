@@ -19,33 +19,68 @@ public class CodeTest {
      */
     public static void main(String[] args) {
 
-
         int[] originalArray = {32, 14, 24, 98, 24, 56, 148, 24, 78, 24};
         int remove = 24;
-        int[] returnedArray = {32, 14, 98, 56, 148, 78};
-
+       // int[] returnedArray = {32, 14, 98, 56, 148, 78};
+        System.out.println(Arrays.toString(removeSpecificValue(originalArray, remove)));
 
 
     }
         public static int[] removeSpecificValue(int[] originalArray, int remove) {
+           // int[] originalArray = {32, 14, 24, 98, 24, 56, 148, 24, 78, 24}; --> { , , , , , , }
+            // user array length = 10
 
-
-          int[] returnedArray;
+          int count = 0;
 
             for (int i = 0; i < originalArray.length; i++) {
                 if (remove == originalArray[i]) {
-                    remove = originalArray[-1];
-
-
-
-
-
-
-
+                    count++;
 
                 }
             }
+            int size = originalArray.length - count; // created returnedarray with length originalArray - count
+            int[] returnedArray = new int[size]; // int[] array = new int[size] -> {32, 14, 98, 56, 148, 78}
+            int temp = 0;
+            int j = 0;
+              for(int i = 0; i < originalArray.length; i++) {
+                  if(originalArray[i] != remove) {
+                      temp = originalArray[i];
+                      if(returnedArray[j] == 0) {
+                          returnedArray[j] = 0;
+                          temp++;
+                      }
+                  }
+              }
+              return returnedArray;
+    }
+    public static int[] removeElement(int[] array, int element) {
+        // int[] originalArray = {32, 14, 24, 98, 24, 56, 148, 24, 78, 24}; --> { , , , , , , }
+        // user array length = 10
+        int count = 0;
+
+        for(int i = 0; i < array.length; i++) {
+            if(element == array[i]) {
+                count++;
+            }
         }
+        int[] returnArray = new int[array.length - count];
+        int temp = 0;
+        int j = 0;
+
+        for(int i = 0; i < array.length; i++) {
+            if(array[i] != element) {
+                temp = array[i];
+                if(returnArray[j] == 0) {
+                    returnArray[j] = 0;
+                    temp++;
+
+                }
+            }
+        } return returnArray;
+
+    }
+
+
 
     /**
      * Question 2:
@@ -61,17 +96,74 @@ public class CodeTest {
      * 	Method should return : 4
      */
     public static void returnMisSmallPosIntr(int[] numb) {
+        //find 1 in array
+             // if not found
+                // break -> store value in missingInt
+        //find 2 in array
+        //      if not found
+        //         break -> store value in missingInt
+        //find 3 in array
+        //       if not found
+        //          break -> store value in missingInt
+        //find 4 in array
+        //        if not found
+        //           break -> store value in missingInt
 
-        for(int i = 0; i < numb.length; i++) {
-            for(int j = i + 1; j < numb.length; j++) {
-                if (numb[j] < numb[i]) {
-                    int num = numb[j];
-                    numb[j] = numb[i];
-                    numb[i] = num;
+        int[] arr = {1, 3, 5, 4, 2, 7};
+        int checkFor = 0;
+
+        while (true) {
+            boolean found = false;
+            checkFor++;
+            for(int i = 0; i < arr.length; i++) {
+                if(arr[i] == checkFor) {
+                    System.out.println(checkFor + " found");
+                    break;
+                }
+            } if(!found) {
+                break;
+            }
+        }
+        System.out.println("Missing number: " + checkFor);
+
+    }
+    public static void returnSmallestPosValue (int[] numb) {
+        int checkFor = 0;
+
+        while (true) {
+            boolean found = false;
+            checkFor++;
+            for(int i = 0; i < numb.length; i++) {
+                if(numb[i] == checkFor) {
+                    break;
+                }
+            } if (!found) {
+                break;
+            }
+        }
+        System.out.println("Missing number: " + checkFor);
+    }
+
+    public static void returnSmallestPositiveInteger() {
+        int[] array = {-1, 3, 5, 4, 2, 7};
+        int missingNumb = 1;
+        boolean found = true;
+        while (found) {
+            found = false;
+            for (int i = 0; i < array.length; i++) {
+                if (missingNumb == array[i]) {
+                    missingNumb++;
+                    found = true;
+                    break;
                 }
             }
         }
+        System.out.println("Missing number: " + missingNumb);
     }
+
+
+
+
 
     /**
      * Question 3:
@@ -95,10 +187,20 @@ public class CodeTest {
      *      85-88
      *
      */
-    public static void trafficTicketingSysytem() {
-        double speedLimit = 70;
-        for(int i = 0; i > 70; i+=5) {
+    public static void trafficTicketingSpeed(int num) {
 
+        double userSpeed = 78;
+        double speedLimit = 70;
+        int points = 0;
+        //78 - 70 = 8;
+        // 8/5 = 1.6 / int 1 point
+        if(userSpeed >= 75) {
+
+
+
+            
         }
     }
-}
+    }
+
+
