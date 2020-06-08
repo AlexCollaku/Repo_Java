@@ -4,21 +4,23 @@ public class Bank {
 
     public static void main(String[] args) {
 
-        Customer c1 = new Customer("Al", "123456789", "Checking", 1000);
-        c1.miniStatment();
+        /**Customer c1 = Customer.createNewCustomer("udfu", "7333", "savings", 122345);
+        c1.openNewAccount("checking" , 2222);
+        c1.getMiniStatement();
+        c1.depositMoney(1000, 1001);
+        c1.getMiniStatement();
 
-        Customer c2 = new Customer("Alex", "12345678", "Saving", 1000);
-        c2.miniStatment();
+        "happy".toLowerCase();
 
-        c1.deposit(100);
-        c2.withdraw(100);
 
-        c1.openNewAccount("checking", 1000);
+        /**
+         *
+         * c1 -> a1
+         * c1.deposit -> a1.deposit
+         *
+         */
 
-        Customer c3 = new Customer("Al", "123456789", "Saving", 1000);
 
-        Account a1 = new Account();
-        a1.openNewAccount("Saving", 1000);
 
     }
 }

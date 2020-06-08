@@ -1,6 +1,5 @@
 package code;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class CodeTest {
@@ -187,20 +186,26 @@ public class CodeTest {
      *      85-88
      *
      */
-    public static void trafficTicketingSpeed(int num) {
+    public static void trafficTicketingSpeed(int userSpeed) {
 
-        double userSpeed = 78;
         double speedLimit = 70;
-        int points = 0;
+        double points = (userSpeed - speedLimit)/5;
         //78 - 70 = 8;
         // 8/5 = 1.6 / int 1 point
-        if(userSpeed >= 75) {
+        if(userSpeed <= 70 && points <= 0) {
+            System.out.println("Thank you for driving within the speed limit");
 
+        } else if(userSpeed > 70 && userSpeed <= 74 && points == 0) {
+            System.out.println("Your speed is " + userSpeed + ". You have " + points + " points against your license.");
 
+        } else if(points > 0 && points <= 11) {
+            System.out.println("Your speed is " + userSpeed + ". You have " + points + " points against your license");
 
-            
+        } else if(points >= 12) {
+            System.out.println("You have " + points + " points against your license. Your license is sopsended");
+
         }
     }
-    }
+}
 
 
